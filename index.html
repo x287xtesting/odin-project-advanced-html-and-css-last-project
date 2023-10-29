@@ -61,37 +61,5 @@
 				</ul>
 			</div>
 		</section>
-
-		<!-- Testing the onload event -->
-		<script>
-			addEventListener("load", () => {
-				const imgContainer = document.createElement("div");
-				imgContainer.classList.add("container");
-				imgContainer.style.maxWidth = "25rem";
-
-				const imgLink = document.createElement("a");
-				imgLink.setAttribute("href", "https://www.youtube.com");
-				imgLink.title = "Click me to go YouTube";
-
-				const img = document.createElement("img");
-
-				img.addEventListener("load", () =>
-					alert("Last image has fully loaded.")
-				);
-				img.src = "./assets/img-desktop.jpg";
-
-				imgLink.appendChild(img);
-				imgContainer.appendChild(imgLink);
-				document.body.appendChild(imgContainer);
-			});
-
-			addEventListener("beforeunload", (event) => {
-				// First we need to preventDefault() according to the specification
-				event.preventDefault();
-
-				// Chrome requires a returnValue
-				event.returnValue = "";
-			});
-		</script>
 	</body>
 </html>
