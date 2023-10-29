@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Odin Advanced HTML and CSS Project</title>
+		<link rel="stylesheet" href="css/main.css" />
+
+		<!-- FontAwesome -->
+		<script
+			src="https://kit.fontawesome.com/826f982026.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<section>
+			<div class="hero container">
+				<figure class="hero__img-container">
+					<picture>
+						<source
+							media="(min-width: 600px)"
+							srcset="./assets/img-desktop.jpg"
+						/>
+						<img
+							src="./assets/img-mobile.jpg"
+							alt=""
+							class="hero__img-container__img"
+						/>
+					</picture>
+					<figcaption class="hero__img-container__heading">
+						Ashley Williams
+					</figcaption>
+				</figure>
+				<h2>About Me</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Nemo velit quod quaerat, fugiat atque nesciunt delectus
+					dolorem enim vitae ut eos dignissimos quas ipsum odit
+					dolorum dicta asperiores odio cumque perferendis eligendi
+					reprehenderit! Alias blanditiis optio provident maxime,
+					assumenda quod quidem laudantium in quisquam facilis
+					obcaecati ratione consequatur ut ipsam id? Distinctio soluta
+					ipsa iusto!
+				</p>
+				<ul class="icons-list">
+					<li>
+						<a href="#" class="icons__link"
+							><i class="fa-brands fa-github"></i
+						></a>
+					</li>
+					<li>
+						<a href="#" class="icons__link">
+							<i class="fa-brands fa-linkedin"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="icons__link"
+							><i class="fa-brands fa-twitter"></i
+						></a>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Testing the onload event -->
+		<script>
+			addEventListener("load", () => {
+				const imgContainer = document.createElement("div");
+				imgContainer.classList.add("container");
+				imgContainer.style.maxWidth = "25rem";
+
+				const imgLink = document.createElement("a");
+				imgLink.setAttribute("href", "https://www.youtube.com");
+				imgLink.title = "Click me to go YouTube";
+
+				const img = document.createElement("img");
+
+				img.addEventListener("load", () =>
+					alert("Last image has fully loaded.")
+				);
+				img.src = "./assets/img-desktop.jpg";
+
+				imgLink.appendChild(img);
+				imgContainer.appendChild(imgLink);
+				document.body.appendChild(imgContainer);
+			});
+
+			addEventListener("beforeunload", (event) => {
+				// First we need to preventDefault() according to the specification
+				event.preventDefault();
+
+				// Chrome requires a returnValue
+				event.returnValue = "";
+			});
+		</script>
+	</body>
+</html>
