@@ -27,19 +27,26 @@ body {
     padding-top: clamp(6em, 20vw, 8em);
   }
 }
-body::before {
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -100;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+}
+.background::before {
   content: "";
   display: block;
   height: 90%;
   width: 100%;
   position: absolute;
   top: 0;
-  z-index: -1000;
+  z-index: -100;
   background: #0891b2;
   clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
 }
 @media (max-width: 23.125rem) {
-  body::before {
+  .background::before {
     height: 65%;
   }
 }
