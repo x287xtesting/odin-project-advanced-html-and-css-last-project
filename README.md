@@ -20,6 +20,6 @@ Here's the [Project's Link](https://www.theodinproject.com/lessons/node-path-adv
 
 ## Notes
 
-I was just focusing on the layout and getting it to looks as close to the design as possible so no focus on accessibility and performance.
+I was just focusing on the layout and getting it to looks as close to the design as possible so no focus on accessibility and performance, also I didn't change the default fonts.
 
 I used [Font Awesome](https://fontawesome.com/) for the icons, and sometimes they're being loaded after the page has fully rendered which is causing some rendering issues.
